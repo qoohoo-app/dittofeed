@@ -8,9 +8,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {
-    "admin": "yarn workspace admin-cli cli \"$@\""
-  },
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^29.2.6",
@@ -50,6 +47,5 @@
     "@opentelemetry/sdk-metrics": "1.12.0",
     "@opentelemetry/sdk-node": "0.38.0",
     "@opentelemetry/semantic-conventions": "1.12.0"
-  },
-  "packageManager": "yarn@4.1.1"
+  }
 }

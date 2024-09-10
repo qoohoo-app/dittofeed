@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "types": ["node", "jest"],
+    "types": ["node"],
     "outDir": "dist",
   },
   "exclude": ["node_modules", "dist", "../lite/**/*", "../dashboard/**/*", "../docs/**/*", "../admin-cli/**/*", "**/*.test.ts", "**/*.test.tsx"],
