@@ -1,0 +1,56 @@
+# fly.toml app configuration file generated for dittofeed-temporal-staging on 2024-09-10T17:25:51+05:30
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'dittofeed-temporal-staging'
+primary_region = 'bom'
+
+[processes]
+  server = '/etc/temporal/entrypoint.sh autosetup'
+  ui = '/etc/temporal/start-ui.sh'
+
+[build]
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 7233
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  max_machines_running = 1
+  processes = ['server']
+
+  [[services.ports]]
+    port = 7233
+    # handlers = ['http'] # Do not expose to public, public ipv4/6 should be removed already
+    # alpn h2 is needed for the grpc protocol
+    [services.ports.tls_options]
+      alpn = ['h2']
+
+  [[services.tcp_checks]]
+    interval = '10s'
+    timeout = '2s'
+    grace_period = '5s'
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 8080
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  max_machines_running = 1
+  processes = ['ui']
+
+  [[services.ports]]
+    port = 8080
+    handlers = ['http'] # Comment to not expose to public
+
+  [[services.ports]] # Comment to not expose to public
+    port = 443
+    handlers = ['tls', 'http']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 2
