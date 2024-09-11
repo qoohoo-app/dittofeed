@@ -1,10 +1,15 @@
-app = 'diitofeed-api'
+# fly.toml app configuration file generated for dittofeed-api on 2024-09-11T18:46:26+05:30
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'dittofeed-api'
 primary_region = 'bom'
 
 [build]
 
 [http_service]
-  internal_port = 3000
+  internal_port = 3001
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
@@ -12,14 +17,6 @@ primary_region = 'bom'
   processes = ['app']
 
 [[vm]]
-  memory = '1gb'
+  memory = '2gb'
   cpu_kind = 'shared'
   cpus = 2
-
-[[mounts]]
-    destination = "/data"
-    source = "data_staging"
-    initial_size = "1GB"
-    auto_extend_size_threshold = 80
-    auto_extend_size_increment = "1GB"
-    auto_extend_size_limit = "5GB"

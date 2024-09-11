@@ -57,6 +57,7 @@ async function run() {
   const [connection, workflowClient] = await Promise.all([
     NativeConnection.connect({
       address: backendConfig().temporalAddress,
+      tls: false,
     }),
     connectWorkflowCLient(),
   ]);

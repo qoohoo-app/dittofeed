@@ -1,4 +1,4 @@
-app = 'dittofeed-worker'
+app = 'dittofeed-worker-staging'
 primary_region = 'bom'
 
 [build]

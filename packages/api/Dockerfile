@@ -51,4 +51,6 @@ COPY --from=builder /service/packages/backend-lib/prisma ./packages/backend-lib/
 COPY --from=builder /service/packages/isomorphic-lib/dist ./packages/isomorphic-lib/dist
 COPY --from=builder /service/packages/isomorphic-lib/package.json ./packages/isomorphic-lib/package.json
 
+EXPOSE 3001
+
 CMD ["yarn", "workspace", "api", "node", "./dist/scripts/startServer.js"]

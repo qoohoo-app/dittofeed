@@ -1,4 +1,4 @@
-app = 'dittofeed-dashboard'
+app = 'dittofeed-dashboard-staging'
 primary_region = 'bom'
 
 [build]
@@ -15,11 +15,3 @@ primary_region = 'bom'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 2
-
-[[mounts]]
-    destination = "/data"
-    source = "data_staging"
-    initial_size = "1GB"
-    auto_extend_size_threshold = 80
-    auto_extend_size_increment = "1GB"
-    auto_extend_size_limit = "5GB"

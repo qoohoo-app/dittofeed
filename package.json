@@ -5,6 +5,18 @@
   "repository": "git@github.com:ideamarketinc/marketing-automation.git",
   "author": "Max Gurewitz <max@dittofeed.com>, Chandler Craig <chandler@dittofeed.com>",
   "private": true,
+  "scripts": {
+    "deploy:worker:staging": "./scripts/deploy.sh worker staging",
+    "deploy:worker:production": "./scripts/deploy.sh worker production",
+    "deploy:temporal:staging": "./scripts/deploy.sh temporal staging",
+    "deploy:temporal:production": "./scripts/deploy.sh temporal production",
+    "deploy:api:staging": "./scripts/deploy.sh api staging",
+    "deploy:api:production": "./scripts/deploy.sh api production",
+    "deploy:dashboard:staging": "./scripts/deploy.sh dashboard staging",
+    "deploy:dashboard:production": "./scripts/deploy.sh dashboard production",
+    "deploy:clickhouse:staging": "./scripts/deploy.sh clickhouse staging",
+    "deploy:clickhouse:production": "./scripts/deploy.sh clickhouse production"
+  },
   "workspaces": [
     "packages/*"
   ],
