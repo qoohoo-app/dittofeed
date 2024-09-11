@@ -3,7 +3,7 @@
 package_name=$1
 environment=$2
 
-allowed_packages=("worker" "dashboard" "api" "temporal" "clickhouse")
+allowed_packages=("worker" "dashboard" "api" "temporal" "clickhouse" "admin-cli")
 allowed_environments=("staging" "production")
 
 show_usage() {

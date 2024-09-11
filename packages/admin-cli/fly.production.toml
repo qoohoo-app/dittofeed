@@ -1,0 +1,14 @@
+# fly.toml app configuration file generated for admin-cli-staging on 2024-09-12T02:45:07+05:30
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'admin-cli'
+primary_region = 'bom'
+
+[build]
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

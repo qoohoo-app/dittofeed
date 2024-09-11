@@ -15,7 +15,9 @@
     "deploy:dashboard:staging": "./scripts/deploy.sh dashboard staging",
     "deploy:dashboard:production": "./scripts/deploy.sh dashboard production",
     "deploy:clickhouse:staging": "./scripts/deploy.sh clickhouse staging",
-    "deploy:clickhouse:production": "./scripts/deploy.sh clickhouse production"
+    "deploy:clickhouse:production": "./scripts/deploy.sh clickhouse production",
+    "deploy:admin-cli:staging": "./scripts/deploy.sh admin-cli staging",
+    "deploy:admin-cli:production": "./scripts/deploy.sh admin-cli production"
   },
   "workspaces": [
     "packages/*"
